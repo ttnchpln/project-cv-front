@@ -9,6 +9,7 @@ import { AdminService } from '../services/admin.service';
 })
 export class AccueilComponent {
   constructor(private adminService: AdminService) {}
+
   accueil: any = '';
   recommendations: any[] = [];
 
@@ -62,12 +63,9 @@ export class AccueilComponent {
     );
   }
 
+  // pour ouvrir les popup d'ajout ou de modification
   openProfilPopup() {
     this.isProfilPopupOpen = true;
-  }
-
-  closeProfilPopup() {
-    this.isProfilPopupOpen = false;
   }
 
   openRecomPopup(adding: boolean = true, recommandation: any = null) {
@@ -79,10 +77,16 @@ export class AccueilComponent {
     this.newText = recommandation.text;
   }
 
+  // pour fermer les popup
   closeRecomPopup() {
     this.isRecomPopupOpen = false;
   }
 
+  closeProfilPopup() {
+    this.isProfilPopupOpen = false;
+  }
+
+  // modification du profil
   modifyProfil() {
     this.adminService
       .updateAccueil(1, {
@@ -97,6 +101,7 @@ export class AccueilComponent {
       });
   }
 
+  // mdificatin ou ajout de recommendations
   modifyRecommendation() {
     if (this.adding) {
       this.adminService
@@ -123,6 +128,7 @@ export class AccueilComponent {
     }
   }
 
+// suppression de recommendations
   deleteRecommendation(id: number) {
     this.adminService.deleteRecommendation(id).subscribe(() => {
       this.getRecommendations();

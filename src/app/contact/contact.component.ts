@@ -30,6 +30,7 @@ export class ContactComponent {
 
   iconCheck = faCheck;
 
+  // envoie du message
   sendMessage() {
     this.adminService
       .sendMessage({

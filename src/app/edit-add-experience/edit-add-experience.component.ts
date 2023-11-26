@@ -55,8 +55,8 @@ export class EditAddExperienceComponent {
   }
 
   isEdit = false;
-  // idToEdit: number = parseInt(this.route.snapshot.paramMap.get('id') ?? '0', 10);
 
+  // ajout d'une experience
   addExperience() {
     this.adminService
       .createExperience({
@@ -72,6 +72,8 @@ export class EditAddExperienceComponent {
         console.log(e);
       });
   }
+
+  // modification d'une experience
   editExperience() {
     this.adminService
       .updateExperience(this.experience.id, {

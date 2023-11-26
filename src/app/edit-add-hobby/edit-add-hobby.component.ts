@@ -21,6 +21,7 @@ export class EditAddHobbyComponent {
 
   selectedIcon = 'Gear';
 
+  // liste des icones, on peut en ajouter si on veut, mais il faut egalement les ajouter sur getIconByName sur ce fichier et le ficher hobbies.component.ts
   iconList: any[] = [
     { label: 'Basketball' },
     { label: 'Tennis' },

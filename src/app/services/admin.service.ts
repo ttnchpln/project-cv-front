@@ -9,7 +9,9 @@ import { Admin } from '../models/admin.model';
 export class AdminService {
   constructor(private http: HttpClient) {}
 
-  private adminUrl = 'http://localhost:8080';
+  private adminUrl = 'http://localhost:8080'; // notre backend
+
+  // liste de tous les appels au back dont on a besoin
 
   createExperience(experience: Admin['experiences']): Observable<Admin> {
     return this.http.post<Admin>(`${this.adminUrl}/experiences`, experience);

@@ -29,7 +29,7 @@ import { AdminService } from '../services/admin.service';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent {
-  isAdmin: boolean = window.localStorage.getItem('isAdmin') === 'true';
+  isAdmin: boolean = window.localStorage.getItem('isAdmin') === 'true';  // on recupere dans le localstorage si on est admin ou pas
 
   iconPlus = faPlus;
   iconModify = faPenToSquare;

@@ -1,4 +1,4 @@
-import { IconStyle } from '@fortawesome/fontawesome-svg-core';
+// les differents modeles utilisés dans l'application
 
 export interface Admin {
   experiences: {

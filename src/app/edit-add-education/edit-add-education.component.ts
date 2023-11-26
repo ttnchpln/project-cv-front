@@ -54,8 +54,8 @@ export class EditAddEducationComponent {
   }
 
   isEdit = false;
-  // idToEdit: number = parseInt(this.route.snapshot.paramMap.get('id') ?? '0', 10);
 
+  // ajout d'une formation
   addEducation() {
     this.adminService
       .createEducation({
@@ -69,6 +69,8 @@ export class EditAddEducationComponent {
         console.log(e);
       });
   }
+
+  // modification d'une formation
   editEducation() {
     this.adminService
       .updateEducation(this.education.id, {

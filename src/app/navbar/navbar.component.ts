@@ -14,7 +14,7 @@ export class NavbarComponent {
     toggleImgPath = "../../assets/menu.svg";
     links = ['Experience', 'Education', 'Skills', 'Hobbies', 'Contact']
 
-    isChecked: boolean = window.localStorage.getItem("isAdmin") == "true" ? true : false;
+    isChecked: boolean = window.localStorage.getItem("isAdmin") === "true"; // on met dans le localstorage si on est admin ou pas
 
     adminCheckChange() {
       if (this.isChecked) {

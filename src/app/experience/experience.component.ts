@@ -15,7 +15,7 @@ export class ExperienceComponent {
   iconModify = faPenToSquare;
   iconDelete = faTrashCan;
 
-  isAdmin: boolean = window.localStorage.getItem("isAdmin") == "true";
+  isAdmin: boolean = window.localStorage.getItem("isAdmin") === "true";  // on recupere dans le localstorage si on est admin ou pas
 
   ngOnInit() {
     this.getAllExperiences();
