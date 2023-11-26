@@ -1,0 +1,34 @@
+<footer class="bg-dark text-center text-white">
+  <script
+    src="https://kit.fontawesome.com/310a48e43a.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <div class="container mx-auto">
+    <section class="flex items-center justify-center">
+      <div class="w-[10em]">
+        <ng-lottie [options]="hireMe"></ng-lottie>
+      </div>
+      <div *ngFor="let item of footers; let i = index">
+        <a
+          class="text-6xl items-center mx-2 justify-center social-icon p-2"
+          [href]="item.link"
+          role="button"
+        >
+          <fa-icon [icon]="item.icon"></fa-icon>
+        </a>
+      </div>
+      <div *ngIf="isAdmin">
+        <button
+          class="text-gray-300 bg-neutral-600 rounded-lg hover:text-white hover:bg-neutral-500 p-2"
+          [routerLink]="['/admin/footer']"
+        >
+        <fa-icon [icon]="iconModify" class="text-white text-base"></fa-icon>
+        </button>
+      </div>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2023 Copyrights: All rights reserved
+  </div>
+</footer>

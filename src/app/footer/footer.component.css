@@ -1,0 +1,18 @@
+footer.bg-dark.text-center.text-white {
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 2rem 0; 
+    padding: 0; 
+    bottom: 0;
+  }
+ 
+  footer .text-center.p-3 {
+    background-color: rgba(0, 0, 0, 0.2); 
+    color: #ffffff; 
+  }
+
+footer .social-icon:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); 
+}
+
+  

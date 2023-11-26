@@ -1,0 +1,173 @@
+<div class="max-w-3xl mx-auto px-4 py-8" *ngIf="isEdit">
+  <div class="bg-gradient-to-r from-purple-700 to-pink-700 rounded-lg mb-5">
+    <h1 class="text-2xl mb-4 font-bold text-white p-4">Edit education</h1>
+  </div>
+
+  <!-- Formulaire d'ajout d'une nouvelle formation -->
+  <form (submit)="editEducation()">
+    <div
+      class="grid grid-rows-3 grid-flow-col gap-4 bg-slate-800 rounded-lg m-3 p-3 mt-5"
+    >
+      <div class="row-span-1">
+        <label for="school" class="text-white 500">School</label>
+        <input
+          type="text"
+          id="school"
+          name="school"
+          [(ngModel)]="education.school"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-1">
+        <label for="startDate" class="text-white 500">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          name="startDate"
+          [(ngModel)]="education.startDate"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-1">
+        <label for="endDate" class="text-white 500">End Date</label>
+        <input
+          type="date"
+          id="endDate"
+          name="endDate"
+          [(ngModel)]="education.endDate"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-2">
+        <label for="description" class="text-white 500">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="education.description"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="row-span-1">
+        <label for="logoUrl" class="text-white 500">Logo URL</label>
+        <input
+          type="text"
+          id="logoUrl"
+          name="logoUrl"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+        />
+      </div>
+    </div>
+    <div class="mb-6 px-3 text-right">
+      <div>
+        <button
+          type="submit"
+          class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3 mx-3"
+        >
+          Save modification
+        </button>
+        <button
+          (click)="cancel()"
+          class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="max-w-3xl mx-auto px-4 py-8" *ngIf="!isEdit">
+  <div class="bg-gradient-to-r from-purple-700 to-pink-700 rounded-lg mb-5">
+    <h1 class="text-2xl mb-4 font-bold text-white p-4">Add a new education</h1>
+  </div>
+
+  <!-- Formulaire d'ajout d'une nouvelle formation -->
+  <form (submit)="addEducation()">
+    <div
+      class="grid grid-rows-3 grid-flow-col gap-4 bg-slate-800 rounded-lg m-3 p-3 mt-5"
+    >
+      <div class="row-span-1">
+        <label for="school" class="text-white 500">School</label>
+        <input
+          type="text"
+          id="school"
+          name="school"
+          [(ngModel)]="newEducation.school"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-1">
+        <label for="startDate" class="text-white 500">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          name="startDate"
+          [(ngModel)]="newEducation.startDate"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-1">
+        <label for="endDate" class="text-white 500">End Date</label>
+        <input
+          type="date"
+          id="endDate"
+          name="endDate"
+          [(ngModel)]="newEducation.endDate"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+
+      <div class="row-span-2">
+        <label for="description" class="text-white 500">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="newEducation.description"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="row-span-1">
+        <label for="logoUrl" class="text-white 500">Logo URL</label>
+        <input
+          type="text"
+          id="logoUrl"
+          name="logoUrl"
+          class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+        />
+      </div>
+    </div>
+    <div class="mb-6 px-3 text-right">
+      <div>
+        <button
+          type="submit"
+          class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3 mx-3"
+        >
+          Add new education
+        </button>
+        <button
+          (click)="cancel()"
+          class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

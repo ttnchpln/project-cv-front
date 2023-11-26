@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations */
+
+@keyframes fadeInTop {
+	from {
+		opacity: 0;
+		transform: translateY(-30%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in-top {
+	animation: fadeInTop 0.3s ease-in-out;
+}
+
+@keyframes fadeInBot {
+	from {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in-bot {
+	animation: fadeInBot 0.5s ease-in-out;
+}
+
+@keyframes fadeInRotate {
+	from {
+		opacity: 0;
+		transform: translateY(-10%) rotate(180deg); /* Initial rotation angle */
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) rotate(360deg); /* Final rotation angle */
+	}
+}
+
+.fade-in-rotate {
+	animation: fadeInRotate 0.5s ease-in-out;
+}
+
+
+  

@@ -1,0 +1,101 @@
+<div class="max-w-3xl mx-auto px-4 py-8">
+  <div class="flex items-center justify-center pt-5">
+    <h1
+      class="text-white text-center w-full bg-gradient-to-r from-purple-700 to-pink-700 to-pink-700 rounded-lg p-3"
+    >
+      Social networks
+    </h1>
+    <p *ngIf="isAdmin" class="text-right">
+      <button
+        class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3 m-2"
+        (click)="openPopup()"
+      >
+        <fa-icon [icon]="iconPlus" class="pt-2 text-white text-xl"></fa-icon>
+      </button>
+    </p>
+  </div>
+  <div
+    class="flex flex-wrap items-center justify-center text-white pt-3 m-3 px-5"
+  >
+    <ng-container *ngFor="let item of socialnetworks">
+      <div class="flex flex-row bg-slate-800 items-center rounded-lg m-2">
+        <fa-icon class="text-xl mx-3" [icon]="item.icon"></fa-icon>
+        <div class="text-sm">{{ item.link }}</div>
+        <button
+          class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 p-2 m-2"
+          (click)="openPopup(item.link, item.logo, false, item.id)"
+        >
+          <fa-icon [icon]="iconModify" class="text-white text-base"></fa-icon>
+        </button>
+        <button
+          class="text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 p-2 m-2"
+          (click)="deleteSocialnetwork($event, item.id)"
+        >
+          <fa-icon [icon]="iconDelete" class="text-white text-base"></fa-icon>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+
+  <div *ngIf="isPopupOpen" class="fixed inset-0 z-10 overflow-y-auto">
+    <div
+      class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+    >
+      <div
+        class="fixed inset-0 transition-opacity"
+        aria-hidden="true"
+        (click)="closePopup()"
+      >
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+      </div>
+
+      <span
+        class="hidden sm:inline-block sm:align-middle sm:h-screen"
+        aria-hidden="true"
+        >&#8203;</span
+      >
+
+      <div
+        class="inline-block align-bottom bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full sm:max-w-md"
+      >
+        <div class="bg-slate-800 p-4">
+          <div class="flex flex-row gap-3">
+            <input
+              [(ngModel)]="newLink"
+              placeholder="Link"
+              class="grow text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+            />
+            <select
+              [(ngModel)]="newSocialnetwork"
+              value="Facebook"
+              class="bg-slate-700 text-white p-2 rounded-md"
+            >
+              <option value="Facebook">Facebook</option>
+              <option value="Twitter">Twitter</option>
+              <option value="Github">Github</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Snapchat">Snapchat</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-row-reverse gap-5 bg-slate-900 p-4">
+          <button
+            (click)="addSocialnetwork()"
+            type="button"
+            class="text-white bg-gradient-to-r from-purple-700 to-pink-700 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 p-2"
+          >
+            Ajouter
+          </button>
+          <button
+            (click)="closePopup()"
+            type="button"
+            class="text-gray-200 bg-gray-600 rounded-lg hover:bg-gray-500 p-2"
+          >
+            Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

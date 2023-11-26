@@ -1,0 +1,63 @@
+<script
+  src="https://kit.fontawesome.com/310a48e43a.js"
+  crossorigin="anonymous"
+></script>
+
+<div class="max-w-3xl mx-auto px-4 py-8">
+  <div class="flex items-center justify-center pt-5">
+    <h1
+      class="text-white text-center w-full bg-gradient-to-r from-purple-700 to-pink-700 to-pink-700 rounded-lg p-3"
+    >
+      Hobbies
+    </h1>
+    <p *ngIf="isAdmin" class="text-right">
+      <button
+        class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3 m-2"
+        [routerLink]="['/admin/hobby/add']"
+      >
+        <fa-icon
+          [icon]="iconPlus"
+          class="pt-2 text-white text-xl"
+        ></fa-icon>
+      </button>
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center items-center m-2">
+    <div *ngFor="let item of hobbies; let i = index" class="m-2">
+      <div class="flip-card mx-2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1>{{ item.title }}</h1>
+            <fa-icon [icon]="item.icon" style="font-size: 5em"></fa-icon>
+          </div>
+          <div
+            class="flip-card-back bg-gradient-to-br from-purple-700 to-pink-700"
+          >
+            <div class="item-center pt-4">
+              <h2>{{ item.title }}</h2>
+            </div>
+            <div class="item-center p-2">
+              <h3>Since {{ item.date }}</h3>
+            </div>
+            <div class="text-left px-5">{{ item.description }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isAdmin" class="text-right mb-3">
+        <button
+          class="text-gray-300 bg-slate-800 rounded-lg hover:text-white hover:bg-slate-700 mx-2 py-1 px-2"
+          [routerLink]="['/admin/hobby/edit/' + item.id]"
+        >
+          <fa-icon [icon]="iconModify" class="text-white text-base"></fa-icon>
+        </button>
+        <button
+          class="text-gray-300 bg-slate-800 rounded-lg hover:text-white hover:bg-slate-700 mx-2 py-1 px-2"
+          (click)="deleteHobby($event, item.id)"
+        >
+          <fa-icon [icon]="iconDelete" class="text-white text-base"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

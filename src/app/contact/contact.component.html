@@ -1,0 +1,112 @@
+<div class="max-w-3xl mx-auto px-4 py-8">
+  <div class="flex items-center justify-center pb-3 pt-5">
+    <h1
+      class="text-white text-center w-full bg-gradient-to-r from-purple-700 to-pink-700 to-pink-700 rounded-lg p-3"
+    >
+      Contact
+    </h1>
+  </div>
+
+  <!-- Formulaire d'ajout d'une nouvelle formation -->
+  <div class="flex flex-row justify-center items-center">
+    <div class="grow">
+      <div class="grid grid-col bg-slate-800 rounded-lg m-3 p-3 mt-5">
+        <div class="row-span-1">
+          <label for="school" class="text-white 500">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="name"
+            class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div class="row-span-1">
+          <label for="school" class="text-white 500">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div class="row-span-1">
+          <label for="school" class="text-white 500">Message</label>
+          <textarea
+            type="text"
+            id="message"
+            name="message"
+            [(ngModel)]="message"
+            class="w-full text-white bg-slate-700 rounded-lg p-2 focus:outline-none focus:shadow-outline"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="mb-6 px-3 text-right">
+        <div>
+          <button
+            type="submit"
+            class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3 mx-3"
+            (click)="sendMessage()"
+          >
+            Send message
+          </button>
+          <button
+            class="buttons text-gray-300 bg-slate-700 rounded-lg hover:text-white hover:bg-slate-600 py-2 px-3"
+            (click)="clearInputs()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="basis-1/2 px-8">
+      <ng-lottie [options]="options" width="100" height="100"></ng-lottie>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isPopupOkOpen" class="fixed inset-0 z-10 overflow-y-auto">
+  <div
+    class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+  >
+    <div
+      class="fixed inset-0 transition-opacity"
+      aria-hidden="true"
+      (click)="closePopup()"
+    >
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <span
+      class="hidden sm:inline-block sm:align-middle sm:h-screen"
+      aria-hidden="true"
+      >&#8203;</span
+    >
+
+    <div
+      class="inline-block align-bottom bg-slate-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full sm:max-w-md"
+    >
+      <div class="bg-slate-800 p-4 text-white">Message envoyé !</div>
+      <div class="flex flex-row bg-slate-900">
+        <fa-icon
+          [icon]="iconCheck"
+          style="font-size: 2em"
+          class="green-icon m-2 grow px-3"
+        ></fa-icon>
+        <button
+          (click)="closePopup()"
+          type="button"
+          class="text-white bg-gradient-to-r from-purple-700 to-pink-700 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 px-5 m-2"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<nav class="w-full flex py-5 justify-between text-slate-200 bg-slate-900">
+  <span class="text-xl mx-5">
+    <a routerLink="" class="hover:text-bold fade-in-top">HireMe</a>
+  </span>
+  <ul
+    class="list-none md:flex hidden justify-end items-center flex-1 gap-5 mr-5"
+  >
+    <li *ngFor="let link of links" class="hover:font-bold cursor-pointer">
+      <a [routerLink]="['/' + link.toLowerCase()]">{{ link }}</a>
+    </li>
+    <li>|</li>
+    <li>
+      <input
+        id="default-checkbox"
+        type="checkbox"
+        class="w-4 h-4"
+        [(ngModel)]="isChecked"(change)="adminCheckChange()"
+      />
+      <label for="default-checkbox" class="ml-2 text-white">Admin</label>
+    </li>
+  </ul>
+
+  <div class="md:hidden flex flex-1 justify-end items-center">
+    <img
+      [src]="toggleImgPath"
+      alt="menu"
+      class="w-[28px] h-[28px] mx-5 cursor-pointer"
+      (click)="setToggle()"
+    />
+
+    <div
+      *ngIf="toogle"
+      ng
+      class="p-6 z-10 bg-slate-500 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar"
+    >
+      <ul
+        class="font-poppins list-none flex justify-end items-start flex-1 flex-col text-slate-100 space-y-3"
+      >
+        <li *ngFor="let link of links" class="hover:font-bold cursor-pointer">
+          <a [routerLink]="['/' + link.toLowerCase()]">{{ link }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

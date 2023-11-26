@@ -1,0 +1,52 @@
+[
+	{
+		"label": "languages",
+		"title": "French",
+		"logo": "faLanguage"
+	},
+	{
+		"label": "languages",
+		"title": "English",
+		"logo": "faEarthEurope"
+	},
+	{
+		"label": "languages",
+		"title": "Spanish",
+		"logo": "faEarthEurope"
+	},
+	{
+		"label": "packOffice",
+		"title": "Word",
+		"logo": "faFileWord"
+	},
+	{
+		"label": "packOffice",
+		"title": "Excel",
+		"logo": "faFileExcel"
+	},
+	{
+		"label": "packOffice",
+		"title": "PowerPoint",
+		"logo": "faFilePowerpoint"
+	},
+	{
+		"label": "programmingLanguages",
+		"title": "HTML",
+		"logo": "faHtml5"
+	},
+	{
+		"label": "programmingLanguages",
+		"title": "Java",
+		"logo": "faJava"
+	},
+	{
+		"label": "programmingLanguages",
+		"title": "JavaScript",
+		"logo": "faJs"
+	},
+	{
+		"label": "programmingLanguages",
+		"title": "Python",
+		"logo": "faPython"
+	}
+]
